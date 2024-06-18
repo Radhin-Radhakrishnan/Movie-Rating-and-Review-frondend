@@ -1,0 +1,34 @@
+.manage_users .users_container {
+    border-bottom: 3px solid red;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+.manage_users .users_container:hover {
+    background-color: rgba(79, 203, 228, 0.064);
+}
+
+.manage_users .users_container .first_part .rounded_poster {
+    border: 3px solid red;
+    border-radius: 50%;
+    color: var(--body_color);
+    font-weight: 600;
+}
+
+.manage_users .users_container .first_part .username_part {
+    color: var(--body_color);
+}
+
+.manage_users .users_container .first_part .username_part h1 {
+    font-family: var(--lg-font);
+    font-weight: 400;
+    letter-spacing: 1px;
+
+}
+
+.manage_users .users_container .second_part a {
+    color: var(--body_color);
+    font-family: var(--sm-font);
+    font-size: 12px;
+    letter-spacing: 1px;
+}

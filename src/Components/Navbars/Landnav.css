@@ -1,0 +1,22 @@
+.nav-bra{
+    font-family: var(--nav-font); 
+    letter-spacing: -3px;
+    color: var(--white);
+}
+.nav-bra::first-letter{
+    font-size: 50px;
+    letter-spacing: -4px;
+
+}
+.nav-btn{
+    color: rgb(255, 255, 255);
+    background: var(--green);
+    transition: 1s;
+    font-family: var(--nav-font);
+    
+}
+.nav-btn:hover{
+    background:rgb(107, 206, 77);
+    color:#20291e;
+}
+

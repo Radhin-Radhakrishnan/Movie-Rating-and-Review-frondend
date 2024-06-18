@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+:root {
+
+  --background: linear-gradient(90deg, rgb(203, 233, 164) 0%, rgb(184, 235, 255) 100%, rgb(118, 202, 156) 100%, rgb(230, 213, 169) 100%, rgb(243, 200, 230) 100%),url('./assets/Untitled (2).png');
+  --background-image: linear-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg");
+  --card-body:rgba(14, 12, 12, 0.575);
+  --green: #36454F;
+  --white: rgb(247, 0, 0);
+  --nav-font: sans-serif;
+  --lg_font:'Gill Sans', 'Gill Sans MT''Trebuchet MS', sans-serif;
+  --sm_font:sans-serif;
+  --design: #404140;
+  --border_color:linear-gradient(to right, #19e746, #0f3d04, #e2e181, #c9d3c8);
+  --footer_background: linear-gradient(90deg, rgb(203, 233, 164) 0%, rgb(184, 235, 255) 100%, rgb(118, 202, 156) 100%, rgb(230, 213, 169) 100%, rgb(243, 200, 230) 100%);
+}
+
+  [data-theme="dark"] {
+
+    --background: linear-gradient(90deg, rgba(5, 75, 15, 1) 0%, rgba(3, 17, 5, 1) 100%, rgba(0, 244, 35, 1) 100%, rgba(28, 249, 0, 1) 100%, rgba(11, 210, 11, 1) 100%),url('./assets/Untitled (4).png');
+    --background-image: linear-gradient(rgb(0, 0, 0, 7), rgba(0, 0, 0, 7)), url("https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg");
+    --card-body:rgba(201, 190, 190, 0.938);
+    --green: #12df67;
+    --white: rgb(201, 197, 197);
+    --nav-font: sans-serif;
+    --lg_font:'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    --sm_font:sans-serif;
+    --design: #009940;
+    --border_color:linear-gradient(to right, #19e746, #0f3d04, #e2e181, #c9d3c8);
+    --footer_background:linear-gradient(90deg, rgba(5, 75, 15, 1) 0%, rgba(3, 17, 5, 1) 100%, rgba(0, 244, 35, 1) 100%, rgba(28, 249, 0, 1) 100%, rgba(11, 210, 11, 1) 100%);
+  }
+

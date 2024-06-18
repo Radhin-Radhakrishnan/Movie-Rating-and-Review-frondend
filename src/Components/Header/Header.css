@@ -1,0 +1,47 @@
+.navbar {
+    font-family: var(--nav-font);
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.navbar .navbar-nav a {
+    text-decoration: none;
+    color: var(--white);
+
+}
+
+.navbar .active {
+    color: var(--white);
+    background-color: rgb(35, 230, 116);
+    border-radius: 5px;
+}
+
+.navbar .navbar-brand {
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.navbar .navbar-brand .logo {
+    border: 3px solid var(--white);
+    padding: 5px;
+    border-radius: 50%;
+}
+
+
+
+.navbar-nav  a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 8px 9px;
+    transition: 0.5s ease-in-out;
+}
+
+
+.navbar .navbar_dropdown {
+    color: var(--white);
+}
+
+.navbar .user_icon {
+    color: var(--white);
+}

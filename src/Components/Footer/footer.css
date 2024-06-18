@@ -1,0 +1,35 @@
+.footer{
+    background: var(--footer_background);
+    z-index: -1;
+}
+.footer_section h3 {
+    color:var(--white);
+    font-family: var(--lg-font);
+}
+.footer_section p {
+    color:var(--white);
+    font-family: var(--lg-font);
+    font-size: large;
+}
+.footer_section ul li {
+    color: var(--white); 
+}
+.custom-shape-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.custom-shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(162% + 1.3px);
+    height: 468px;
+    z-index: -1;
+}
+
+.custom-shape-divider-bottom .shape-fill {
+    fill:var(--design)
+}
