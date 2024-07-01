@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import LandingNav from '../Navbars/LandingNav';
 import '../LandingPage/LandingPage.css';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer/footer';
 
 const LandingPage = () => {
   const navigate = useNavigate();
