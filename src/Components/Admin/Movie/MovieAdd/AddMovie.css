@@ -1,0 +1,51 @@
+.addMovie_Section .main_header {
+    border:  none;
+    font-family: var(--lg_font);
+}
+.addMovie_Section{
+    background: var(--footer_background);
+}
+.addMovie_Section .main_header h1 {
+    text-align: start;
+    letter-spacing: 1px;
+    font-size: 45px;
+    font-weight: 400;
+    color: gray
+}
+
+.addMovie_Section .addMovie_container .addMovie_form  form .loading_message {
+    color: rgb(248, 0, 0);
+}
+
+.addMovie_Section .addMovie_container .addMovie_form  form input {
+    background-color: var(--green);
+    border: var(--nav-col);
+    border-radius: 24px;
+    color: var(--nav-col);
+}
+
+.addMovie_Section .addMovie_container .addMovie_form  form .submit_button {
+    background-color: var(--nav-col);
+    color: var(--white);
+    font-weight: 500;
+    border-radius: 25px;
+}
+.form-col{
+    border-radius: 25px;
+    border: 1px solid var(--white);
+    background: var(--green);
+}
+.rounded-pill{
+    background: var(--nav-col);
+    color: rgb(28, 230, 10);
+    bottom: var(--white);
+    transition: 0.75s;
+}
+.rounded-pill:hover{
+background: rgb(46, 219, 11);
+color: black;
+}
+.text-label{
+    color: grey;
+    font-size: 20px;
+}

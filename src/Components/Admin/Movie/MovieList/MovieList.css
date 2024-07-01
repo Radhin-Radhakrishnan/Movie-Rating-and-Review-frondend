@@ -1,0 +1,77 @@
+.movieList_section{
+    background: var(--green);
+}
+.movieList_section .movieList_container .main_header {
+ border: none;
+}
+
+.movieList_section .movieList_container .main_header h1 {
+    color: var(--white);
+    font-size: 30px;
+    font-family: var(--lg_font);
+    letter-spacing: 1px;
+}
+
+.movieList_section .movieList_container .table_section {
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+}
+
+
+.movieList_section .movieList_container .table_section::-webkit-scrollbar {
+    display: none;
+}
+
+.movieList_section .movieList_container .table_section .table {
+    background-color: var(--nav-col);
+    
+}
+
+.movieList_section .movieList_container .table_section .table th {
+    font-size: 18px;
+    
+    font-family: var(--sm_font);
+    letter-spacing: 1px;
+}
+
+.movieList_section .movieList_container .table_section .table td {
+    font-size: 15px;
+    font-family: var(--sm_font);
+    letter-spacing: 1px;
+    white-space: wrap; /* Prevent text from wrapping */
+    text-overflow: clip;
+}
+
+.movieList_section .movieList_container .table_section .table .delete_button {
+    color: var(--green);
+    background-color: rgb(16, 138, 5);
+    border: none;
+    transition: 0.5s ease-in;
+}
+
+.movieList_section .movieList_container .table_section .table .delete_button:hover {
+    cursor: pointer;
+    background-color: rgba(5, 143, 23, 0.979);
+}
+
+.movieList_section .movieList_container .table_section .table .delete_button .delete_icon {
+    color: var(--white);
+}
+
+.movieList_section .movieList_container .table_section .text-start .add_button {
+    color: var(--nav-col);
+    background-color: rgb(44, 209, 10);
+    padding: 0.45rem 1.5rem;
+    border: none;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: 0.5s ease-in;
+}
+
+.movieList_section .movieList_container .table_section .add_button:hover {
+    cursor: pointer;
+    background-color: rgb(2, 155, 22);
+    color: rgb(17, 11, 12);
+}

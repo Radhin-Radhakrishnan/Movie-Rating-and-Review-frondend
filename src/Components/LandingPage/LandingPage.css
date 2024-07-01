@@ -32,49 +32,45 @@
   0% {
     border-color: #009245;
   }
-
   25% {
     border-color: #fcee21;
   }
-
   50% {
     border-color: #00a8c5;
   }
-
   75% {
     border-color: #d9e021;
   }
-
   100% {
     border-color: #009245;
   }
 }
 
-.btn-main {
-  height: 55px;
-  margin: 20px;
-  font: 600 16px/1.375 sans-serif;
-  color: #fff8f8;
-  background-size: 300% 100%;
+.btn-land {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 35px;
   cursor: pointer;
-  border: 2px solid;
-  transition: all 1s;
-  background-image: var(--border_color);
-  box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+  transition:1s ease-in-out;
+  background: linear-gradient(45deg, #01690f, #039730); /* Gradient colors */
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2);
+  border: 2px solid #009245;  /* Initial border color to match the animation */
   animation: borderAnimation 4s infinite;
 }
 
-.btn-main:hover {
+.btn-land:hover {
   background-position: 100% 0;
-  color: #0f3d04;
+  background: linear-gradient(45deg, #99d173, #1d4701);
+  color: #e5ece6;
 }
 
-.btn-main:focus {
+.btn-land:focus {
   outline: none;
 }
-
 .fea-main {
-  background:var(--background);
+  background:var(--footer_background);
 }
 
 

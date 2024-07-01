@@ -1,0 +1,13 @@
+.movie-tabs  button {
+    max-width: 150px;
+    padding: 0.35rem 0.85rem;
+    background-color: var(--nav-col);
+    color: var(--white);
+    border: var(--white);
+
+}
+
+.movie-tabs .active {
+    background-color: rgb(3, 218, 32);
+    
+}

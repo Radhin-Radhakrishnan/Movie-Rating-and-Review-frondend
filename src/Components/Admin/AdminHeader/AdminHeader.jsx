@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import '../../Header/Header.css'
 import { useRecoilState } from 'recoil';
 import { isLoginState, userDataState } from '../../../Atoms/loginAtom';
 import axios from '../../../axios/axios';
+import '../../DarkMode/DarkMode'
+import DarkMode from '../../DarkMode/DarkMode';
 
 const AdminHeader = () => {
 
@@ -12,7 +15,7 @@ const AdminHeader = () => {
     const [isLogin, setIsLogin] = useRecoilState(isLoginState)
     const [userData, setUserData] = useRecoilState(userDataState)
 
-
+    const navigate = useNavigate();
 
     //signin fetch
     useEffect(() => {
@@ -26,7 +29,7 @@ const AdminHeader = () => {
             const fetchData = async () => {
                 try {
                     console.log("This is the login data");
-                    const response = await axios.get('/api/v1/admin', {
+                    const response = await axios.get('/api/v1/admin',{
                         headers: {
                             "Content-Type": "application/json",
                             "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`
@@ -44,7 +47,7 @@ const AdminHeader = () => {
                     }
 
                 } catch (error) {
-                    console.error('Error fetching user info:', error);
+                    console.error('Error fetching user info:',error);
                 }
             };
             fetchData();
@@ -63,9 +66,9 @@ const AdminHeader = () => {
     }
     return (
         <header>
-            <Navbar expand="lg" className="py-3" bg="dark" data-bs-theme="dark">
+            <Navbar expand="lg" className="nav_head py-4 ">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="#home" className="text-white fs-3"  onClick={() => navigate('/')}>
                         FrameRate
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -74,6 +77,7 @@ const AdminHeader = () => {
                             <Link to={"/admin/users"} className='ms-lg-3'>Manage Users</Link>
                             <Link to={"/admin/listOfMovies"} className='ms-lg-3'>Manage Movies</Link>
                         </Nav>
+                        <DarkMode/>
                         <Nav className='ms-auto text-center text-lg-start'>
                             <Link to={'/login'} onClick={handleLoggOut} className='ms-lg-3'>Logout</Link>
                         </Nav>

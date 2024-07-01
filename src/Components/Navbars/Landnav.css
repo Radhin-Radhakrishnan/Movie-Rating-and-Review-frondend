@@ -1,22 +1,40 @@
-.nav-bra{
+.nav-bra {
     font-family: var(--nav-font); 
     letter-spacing: -3px;
-    color: var(--white);
+    color: var(--green);
+    transition: .5s;
 }
-.nav-bra::first-letter{
+.nav-bra:hover{
+    color: rgb(17, 216, 84);
+}
+
+.nav-bra::first-letter {
     font-size: 50px;
     letter-spacing: -4px;
-
 }
-.nav-btn{
-    color: rgb(255, 255, 255);
-    background: var(--green);
+
+.nav-btn {
+    color: var(--white);
+    background: var(--button-col);
     transition: 1s;
     font-family: var(--nav-font);
-    
-}
-.nav-btn:hover{
-    background:rgb(107, 206, 77);
-    color:#20291e;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap; /* Prevent breaking */
 }
 
+.nav-btn:hover {
+    background: rgb(41, 165, 3);
+    color: #20291e;
+}
+
+@media (max-width: 767.98px) {
+    .nav-btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-bra {
+        font-size: 1.5rem;
+    }
+}

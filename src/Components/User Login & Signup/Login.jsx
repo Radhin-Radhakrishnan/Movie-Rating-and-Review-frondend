@@ -1,7 +1,7 @@
 
 import React,{useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-import { Container, Form, Button } from 'react-bootstrap';
+import { Container,Row,Col,Form, Button } from 'react-bootstrap';
 import { z } from 'zod'
 import './Login.css';
 import { useForm } from 'react-hook-form';
@@ -43,7 +43,7 @@ const Login = () => {
           console.log(data)
           try {
               
-              const response = await axios.post('/api/v1/user/signin',data);
+              const response = await axios.post('/api/v1/user/signIn',data);
 
               if (response.status === 200) {
                   alert(response.data.message) 

@@ -3,7 +3,8 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import axios from '../../axios/axios';
 import { useRecoilState } from 'recoil';
 import { movieDataState } from '../../Atoms/movieAtom';
-import './Reviews.css'
+import './Reviews.css';
+import AddReviews from '../Admin/Movie/AddReviews/AddReviews';
 
 
 
@@ -78,10 +79,10 @@ const Reviews = () => {
                             <div className='review_content'>
                                 <h3>Reviews ({reviews && reviews.length})</h3>
                                 {reviews && reviews.length > 0 ? (
-                                    reviews.map((review) => (
-                                        <div className="review_para d-flex justify-content-between align-items-start mb-3" key={review.id}>
+                                    reviews.map ((review) => ( 
+                                        <div  className="review_para d-flex justify-content-between align-items-start mb-3" key={review._id}>
                                             <p className="flex-grow-1">{review.content}</p>
-                                            <Button variant="danger" className="delete_button" onClick={() => handleDeleteMovie(review.id)}>
+                                            <Button className="delete_button" onClick={() => handleDeleteMovie(review._id)}>Delete
                                               
                                             </Button>
                                         </div>
@@ -95,7 +96,7 @@ const Reviews = () => {
                 </Row>
                 <Row className="justify-content-center mt-4">
                     <Col xs={12} md={10}>
-                       
+                    <AddReviews />
                     </Col>
                 </Row>
             </Container>

@@ -1,12 +1,18 @@
-import React,{ useEffect, useState } from "react";
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react'
+import { Container, Row, Col, Card, Button } from 'react-bootstrap'
+import { MdDeleteOutline } from 'react-icons/md'
+import './Favorite.css'
 import axios from '../../axios/axios'
+import { imageUrl } from '../../urls/urls'
+import NoFavorites from '../NoFavorites/NoFavorites'
+import Preloader from '../Preloader/Preloader'
+
 
 const Favorite = () => {
 
     const [favorites, setFavorites] = useState([]);
     const [isFavorite, setIsFavorite] = useState(false)
-  
+    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
@@ -48,43 +54,49 @@ const Favorite = () => {
             
         } catch (error) {
             console.error("Error deleting review:", error);
+            // Display an error message to the user or handle the error appropriately
             alert("An error occurred while deleting the review. Please try again.");
         }
 
     }
     return (
         <section className='favorites_container py-5'>
-            <Container>
-                {isFavorite && favorites ? (
-                    <Row className="gy-4">
-                        {favorites.map((favorite) => (
-                            <Col xs={12} md={6} lg={4} key={favorite.id}>
-                                <div className="favorite_box p-3">
-                                    <div className="left_part d-flex flex-column align-items-center">
-                                        <article className='image_box'>
-                                            <img 
-                                                src={favorite.mediaImage.startsWith('/') ? `${favorite.mediaImage}` : favorite.mediaImage}
-                                                alt="favorite_image"
-                                                className='favorite_img img-fluid'
-                                            />
-                                        </article>
-                                        <div className="movie_title py-2 px-3 text-center">
-                                            <h4>{favorite.mediaTitle}</h4>
-                                        </div>
+            {loading && <Preloader />}
+            {!loading && (
+                <Container>
+                    {isFavorite ? (
+                        favorites && favorites.map((favorite) => (
+                            <Row className='favorite_box' key={favorite.id}>
+                                <Col lg={4} sm={12} className='my-4'>
+                                    <Card>
+                                        <Card.Img
+                                            variant="top"
+                                            src={favorite.mediaImage.startsWith('/') ? `${imageUrl}${favorite.mediaImage}` : favorite.mediaImage}
+                                            alt="favorite_image"
+                                            className='favorite_img'
+                                        />
+                                    </Card>
+                                </Col>
+                                <Col lg={8} sm={12} className='d-flex flex-column justify-content-between mt-3'>
+                                    <div>
+                                        <h4 className='movie_title'>{favorite.mediaTitle}</h4>
+                                       
                                     </div>
-                                    <div className="right_part d-flex justify-content-center">
-                                        <Button variant="danger" className='delete_button' onClick={() => deleteFavoriteMovie(favorite.id)}>
-                                            
-                                        </Button>
-                                    </div>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                ) : (
-                    <p>No favorites available.</p>
-                )}
-            </Container>
+                                    <Button
+                                        className='delete_button align-self-end mt-3 mb-4 mt-lg-0'
+                                        onClick={() => deleteFavoriteMovie(favorite._id)}
+                                    >
+                                        <MdDeleteOutline className="delete_icon" />
+                                        Delete
+                                    </Button>
+                                </Col>
+                            </Row>
+                        ))
+                    ) : (
+                        <NoFavorites />
+                    )}
+                </Container>
+            )}
         </section>
     )
 }

@@ -1,0 +1,56 @@
+.addReviews {
+    padding: 3rem 0;
+  }
+  
+  .review_posting_section {
+    padding: 3rem;
+    background-color: var(--card-body);
+    border-radius: 8px;
+  }
+  
+  .review_posting_section h4 {
+    color: var(--nav-col);
+    font-family: var(--sm_font);
+  }
+  
+  .review_posting_section .form-control {
+    border: 1px solid var(--white);
+    background-color: white;
+    color: var(--nav-col);
+  }
+  
+  .review_posting_section .form-text {
+    color: var(--nav-col);
+  }
+  
+  .review_posting_section .btn {
+    color: var(--white);
+    background-color: var(--nav-col);
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .review_posting_section .btn .post_icon {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  @media only screen and (max-width: 991.99px) {
+    .review_posting_section {
+      padding: 2rem;
+    }
+  }
+  
+  @media only screen and (max-width: 768.99px) {
+    .review_posting_section {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media only screen and (max-width: 576.99px) {
+    .review_posting_section {
+      padding: 1rem;
+    }
+  }
+  

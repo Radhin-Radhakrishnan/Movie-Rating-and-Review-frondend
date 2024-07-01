@@ -5,6 +5,7 @@ import { Link} from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { isLoginState,userDataState } from '../../Atoms/loginAtom';
 import './Header.css';
+import DarkMode from '../DarkMode/DarkMode';
 import axios from '../../axios/axios';
 import { activeLinkState } from '../../Atoms/activeLinkAtom';
 import { FaUser } from 'react-icons/fa'; 
@@ -57,17 +58,17 @@ const Header = () => {
 
     return (
         <header>
-            <Navbar expand="lg" className="py-3 rounded" bg="light" data-bs-theme="light">
+            <Navbar expand="lg" className="nav_head py-4">
                 <Container>
-                    <Navbar.Brand href="#home">
-                     FrameRate
+                    <Navbar.Brand href="#home" className='head-nav fs-3 text-white'  onClick={() => navigate('/')}>
+                    𝐅𝐫𝐚𝐦𝐞 𝐑𝐚𝐭𝐞 
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className='text-center text-lg-start navbar_nav'>
+                        <Nav className='text-center text-lg-start navbar_nav pt-2'>
                             <Link
                                 to='/home'
-                                className={`ms-lg-3 mt-3 mt-lg-0 ${activeLink === 'home' ? 'active' : ''}`}
+                                className={`ms-lg-3 mt-3 mt-lg-0  ${activeLink === 'home' ? 'active' : ''}`}
                                 onClick={() => handleNavItemClick('home')}
                             >
                                 Home
@@ -79,6 +80,20 @@ const Header = () => {
                             >
                                 Movies
                             </Link>
+                            <Link
+                                            to='/user/favorites'
+                                            className={`${activeLink === 'favorites' ? 'active' : ''}`}
+                                            onClick={() => handleNavItemClick('favorites')}
+                                        >
+                                            Favorites
+                            </Link>
+                            <Link
+                                            to='/user/reviews'
+                                            className={`${activeLink === 'reviews' ? 'active' : ''}`}
+                                            onClick={() => handleNavItemClick('reviews')}
+                                        >
+                                            Reviews
+                                        </Link>
                             {!isLogin && (
                                 <Link
                                     to='/login'
@@ -95,7 +110,7 @@ const Header = () => {
                                 <DarkMode />
                                 <NavDropdown
                                     title={
-                                        <>   DARK & LIGHT
+                                        <> 
                                             <span className='user_icon me-1'>
                                                 <FaUser />
                                             </span>
@@ -105,24 +120,6 @@ const Header = () => {
                                     id="basic-nav-dropdown"
                                     className='me-lg-4 mt-2 mt-lg-0 navbar_dropdown'
                                 >
-                                    <Nav className='px-3 mb-2'>
-                                        <Link
-                                            to='/user/favorites'
-                                            className={`${activeLink === 'favorites' ? 'active' : ''}`}
-                                            onClick={() => handleNavItemClick('favorites')}
-                                        >
-                                            Favorites
-                                        </Link>
-                                    </Nav>
-                                    <Nav className='px-3 mb-2'>
-                                        <Link
-                                            to='/user/reviews'
-                                            className={`${activeLink === 'reviews' ? 'active' : ''}`}
-                                            onClick={() => handleNavItemClick('reviews')}
-                                        >
-                                            Reviews
-                                        </Link>
-                                    </Nav>
                                     <Nav className='px-3 mb-2'>
                                         <Link
                                             to='/user/update-password'
@@ -154,28 +151,11 @@ const Header = () => {
                                     id="basic-nav-dropdown"
                                     className='me-lg-4 navbar_dropdown'
                                 >
-                                    <Nav className='px-3 mb-2'>
-                                        <Link
-                                            to='/user/favorites'
-                                            className={`${activeLink === 'favorites' ? 'active' : ''}`}
-                                            onClick={() => handleNavItemClick('favorites')}
-                                        >
-                                            Favorites
-                                        </Link>
-                                    </Nav>
-                                    <Nav className='px-3 mb-2'>
-                                        <Link
-                                            to='/user/reviews'
-                                            className={`${activeLink === 'reviews' ? 'active' : ''}`}
-                                            onClick={() => handleNavItemClick('reviews')}
-                                        >
-                                            Reviews
-                                        </Link>
-                                    </Nav>
+                                    
                                     <Nav className='px-3 mb-2'>
                                         <Link
                                             to='/user/update-password'
-                                            className={`${activeLink === 'updatePassword' ? 'active' : ''}`}
+                                            className={`text-dark${activeLink === 'updatePassword' ? 'active' : ''}`}
                                             onClick={() => handleNavItemClick('updatePassword')}
                                         >
                                             Update Password

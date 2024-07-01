@@ -12,11 +12,7 @@ const ErrorPage= () =>{
               <Card.Title as="h1">Oops!</Card.Title>
               <Card.Text>
                 Sorry, an unexpected error has occurred.
-              </Card.Text>
-              <Card.Text className="text-muted">
-        
-              </Card.Text>
-              <Button variant="success">Go Back</Button>
+              </Card.Text> 
             </Card.Body>
           </Card>
         </Col>

@@ -27,14 +27,14 @@
   border-radius: 22px;
   border: none;
   background: rgba(211, 204, 204, 0.793);
-  color: var(--green);
+  color: black;
   padding: .5rem;
   margin-bottom: .25rem;
 }
 
 .login_section .login_container form .signin_button {
   color: var(--white);
-  background-color: rgb(110, 207, 101);
+  background-color: rgb(9, 105, 0);
   border: none;
   border-radius: 22px;
   padding: .5rem;

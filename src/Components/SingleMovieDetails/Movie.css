@@ -1,0 +1,55 @@
+/* Movie.css */
+.movie_box {
+    width: 100%;
+    background-image: linear-gradient(250deg,rgb(0, 0, 0, 0.7) 0%,rgb(0, 0, 0, 0.7) 66%), url('https://images.alphacoders.com/441/thumb-1920-441809.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.movie_img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 22px;
+}
+
+.movie_title h1 {
+    font-family: var(--lg_font);
+    color: var(--white);
+    font-size: 2.75rem;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+}
+
+.movie_description p {
+    font-family: var(--sm_font);
+    color:white;
+    letter-spacing: 1px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: start;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+}
+
+.button_group .favorite_icon {
+    font-size: 20px;
+    font-weight: 800;
+    margin-right: 0.5rem;
+}
+.button_group .btn{
+    color: var(--white);
+    background: var(--nav-col);
+    border: 2px solid var(--white);
+    transition: 1s;
+}
+.button_group .btn:active{
+    color: var(--white);
+    background: var(--nav-col);
+    border: 2px solid var(--white);
+}
+.button_group .btn:hover{
+    color: var(--white);
+    background: rgb(73, 72, 72);
+    border: 2px solid var(--white);
+}

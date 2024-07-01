@@ -1,0 +1,57 @@
+/* NoFavorites.css */
+.noFavorite_section {
+    width: 100%;
+    background: linear-gradient(to bottom right, #ffffff, #ffffff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noFavorite_section .content {
+    text-align: center;
+    background: var(--nav-col);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.noFavorite_section .content h1 {
+    color: #43b417;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.noFavorite_section .content p {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.noFavorite_section .content .btn {
+    background-color: #43b417;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.noFavorite_section .content .btn:hover {
+    background-color: #36a013;
+}

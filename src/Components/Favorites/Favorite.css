@@ -1,0 +1,38 @@
+
+.favorites_container {
+    width: 100%;
+    background:var(--nav-col);
+    min-height: 100vh;
+}
+
+.favorite_box {
+    margin-bottom: 20px;
+}
+
+.favorite_img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.movie_title{
+    color: #0bee03;
+    font-size: 2.25rem;
+    font-family: var(--lg_font);
+}
+
+.delete_button {
+    background-color: black;
+    border: 2px solid greenyellow;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: rgb(95, 235, 14);
+    display: flex;
+    align-items: center;
+}
+
+.delete_button .delete_icon {
+    margin-right: 5px;
+    font-size: 1.25rem;
+}
+

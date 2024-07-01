@@ -1,0 +1,61 @@
+.othersReview_section {
+    background-color: var(--nav-col);
+    color: var(--white);
+  }
+  
+  .main_header {
+    font-family: var(--lg_font);
+    letter-spacing: 2px;
+    font-size: 30px;
+    border: 5px solid rgb(81, 255, 0);
+    display: inline-block;
+  }
+  
+  .othersReview_content {
+    border: 2px solid rgb(0, 255, 42);
+    border-radius: 9px;
+    padding: 1rem;
+  }
+  
+  .header h3 {
+    font-family: var(--lg_font);
+    letter-spacing: 2px;
+    font-size: 20px;
+  }
+  
+  .user_badge {
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(15, 224, 78);
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+  
+  .para p {
+    font-family: var(--sm_font);
+    letter-spacing: 1px;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 576.99px) {
+    .othersReview_content {
+      padding: 0.5rem;
+    }
+  
+    .main_header {
+      font-size: 24px;
+    }
+  
+    .header h3 {
+      font-size: 18px;
+    }
+  
+    .user_badge {
+      font-size: 1.25rem;
+    }
+  
+    .para p {
+      font-size: 0.875rem;
+    }
+  }
+  
