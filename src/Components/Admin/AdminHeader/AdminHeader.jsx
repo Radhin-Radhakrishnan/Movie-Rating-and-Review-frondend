@@ -74,8 +74,8 @@ const AdminHeader = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className='text-center text-lg-start navbar_nav mx-auto'>
-                            <Link to={"/admin/users"} className='ms-lg-3'>Manage Users</Link>
-                            <Link to={"/admin/listOfMovies"} className='ms-lg-3'>Manage Movies</Link>
+                            <Link to={"/admin/users"} className='ms-lg-3'> Manage Users</Link>
+                            <Link to={"/admin/listOfMovies"} className='ms-lg-3'> Add Movies</Link>
                         </Nav>
                         <DarkMode/>
                         <Nav className='ms-auto text-center text-lg-start'>

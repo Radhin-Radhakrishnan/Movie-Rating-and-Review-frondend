@@ -30,7 +30,7 @@ const MovieCard = ({ title, url }) => {
                                 <article className='movie_card' key={movie.id}>
                                     <img src={`${imageUrl + movie.backdrop_path}`} alt="movie-image" />
                                     <div className="title text-center ">
-                                        <Link to={`/movies/${movie.id}`} className='text-decoration-none' onClick={() => handleClick(movie.Id)}>
+                                        <Link to={`/movies/${movie.id}`} className='text-decoration-none text-wrap' onClick={() => handleClick(movie.Id)}>
                                             <h6>{movie.title}</h6>
                                         </Link>
                                     </div>

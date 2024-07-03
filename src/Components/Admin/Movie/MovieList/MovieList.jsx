@@ -10,22 +10,23 @@ const MovieList = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        const token = localStorage.getItem("jwt_token");
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('/api/v1/admin/movies', {
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${token}`
-                    }
-                });
-                setMovies(response.data);
-            } catch (error) {
-                console.log("fetching error: ", error);
-            }
-        };
         fetchData();
     }, []);
+
+    const fetchData = async () => {
+        const token = localStorage.getItem("jwt_token");
+        try {
+            const response = await axios.get('/api/v1/admin/movies', {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+            setMovies(response.data);
+        } catch (error) {
+            console.log("fetching error: ", error);
+        }
+    };
 
     const deleteMovie = async (id) => {
         try {
@@ -36,7 +37,7 @@ const MovieList = () => {
                 }
             });
             alert(response.data.message);
-            setMovies(movies.filter(movie => movie.id !== id));
+            fetchData();
         } catch (error) {
             console.log("Deleting error: ", error);
         }
@@ -46,9 +47,9 @@ const MovieList = () => {
         <section className='movieList_section py-2'>
             <Container>
                 <Row className="movieList_container py-3 px-1">
-                    <Col className="main_header pt-2 mt-5">
+                    <div className="main_header pt-2 mt-5">
                         <h1 className='text-capitalize'>List of movies</h1>
-                    </Col>
+                    </div>
                     <Col className="table_section py-1 mt-5">
                         <Table responsive bordered hover variant='dark'>
                             <thead>
@@ -58,6 +59,7 @@ const MovieList = () => {
                                     <th className='py-3'>Genre</th>
                                     <th className='py-3'>Description</th>
                                     <th className='py-3'>Image Url</th>
+                                    <th className='py-3'>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,7 +71,7 @@ const MovieList = () => {
                                         <td className='py-2 px-2'>{movie.mediaDescription}</td>
                                         <td className='py-2 px-2'>{movie?.mediaImage} {movie?.mediaImageUrl}</td>
                                         <td className='py-2 px-2'>
-                                            <Button  className='delete_button rounded-pill' onClick={() => deleteMovie(movie._id)}>
+                                            <Button className='delete_button rounded-pill text-white' onClick={() => deleteMovie(movie._id)}>
                                                 Delete<MdDeleteOutline />
                                             </Button>
                                         </td>
@@ -79,7 +81,7 @@ const MovieList = () => {
                         </Table>
                         <div className="text-start text-sm-center mt-5">
                             <Link to="/admin/addMovie">
-                                <Button  className='add_button rounded-pill'>
+                                <Button className='add_button rounded-pill'>
                                     <IoMdAdd className='me-1' />
                                     Add
                                 </Button>
