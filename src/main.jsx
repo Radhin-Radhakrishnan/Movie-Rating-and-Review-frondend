@@ -1,11 +1,10 @@
+import React, { lazy, Suspense } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RecoilRoot,atom,selector, useRecoilState,useRecoilValue} from 'recoil';
-import React, { lazy, Suspense } from 'react'
 import App from './App.jsx';
 import './index.css';
-
 import UserRoot from './routes/UserRoot.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import Home from './pages/Home.jsx';
