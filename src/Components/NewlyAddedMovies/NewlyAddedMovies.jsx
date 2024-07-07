@@ -38,13 +38,15 @@ const NewlyAddedMovies = ({title}) => {
                     <span className='text_underline'>{title}</span>
                 </h2>
                 <div className='movie_collection mt-4'>
+                    {/* {JSON.stringify(movies)} */}
                     {
-                        movies && movies.map((movie) => {
+                        movies && movies?.map((movie) => {
                             return (
-                                <article className='movie_card' key={movie.id}>
+                                <article className='movie_card' key={movie._id}>
+                                
                                     <img src={movie?.mediaImageUrl || movie?.mediaImage} alt="movie-image" />
                                     <div className="title text-center ">
-                                        <Link to={`/addedMovies/${movie.id}`} className='text-decoration-none' onClick={() => {handleClick(movie.Id)}}>
+                                        <Link to={`/addedMovies/${movie._id}`} className='text-decoration-none' onClick={() => {handleClick(movie._id)}}>
                                             <h6>{movie.title}</h6>
                                         </Link>
                                     </div>

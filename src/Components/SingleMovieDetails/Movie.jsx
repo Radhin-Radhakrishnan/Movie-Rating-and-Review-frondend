@@ -50,7 +50,7 @@ const Movie = () => {
                                         <p>{movie.overview}</p>
                                     </div>
                                     <div className="button_group mt-lg-4">
-                                        <Button className='btn rounded-pill py-2' onClick={() => handleFavoriteMovie(movie.id)}>
+                                        <Button className='btn rounded-pill py-2 mb-3' onClick={() => handleFavoriteMovie(movie.id)}>
                                             <CiHeart className="favorite_icon" />
                                             Add To Favorite
                                         </Button>

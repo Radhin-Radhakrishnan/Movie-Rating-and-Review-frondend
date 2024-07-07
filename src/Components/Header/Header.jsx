@@ -114,7 +114,7 @@ const Header = () => {
                                             <span className='user_icon me-1'>
                                                 <FaUser />
                                             </span>
-                                            {userData && userData.username}
+                                            {userData && userData.firstName}
                                         </>
                                     }
                                     id="basic-nav-dropdown"

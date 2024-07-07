@@ -16,7 +16,7 @@ const AllReviews = () => {
         const response = await axios.get(`/api/v1/movie/${movieId}/otherReviews`);
         setReviews(response.data.reviews);
         setUsers(response.data.users);
-        console.log(response.data.users);
+        console.log(response.data.users)
       } catch (error) {
         console.log(error);
       }
@@ -29,11 +29,9 @@ const AllReviews = () => {
       setIsReview(true);
     }
   }, [reviews]);
-
-  useEffect(() => {
-    console.log({ users });
-  }, [users]);
-
+useEffect(() =>{
+console.log({users})
+},[users])
   return (
     isReview ? (
       <section className='othersReview_section py-5'>
@@ -44,23 +42,22 @@ const AllReviews = () => {
             </Col>
           </Row>
           <Row>
-          
+         { JSON.stringify(users)}
+         { JSON.stringify(reviews)}
             {reviews.map((review) => {
-              let user = null;
-              for (const usersArray of users) {
-                user = usersArray.find((u) => u.id === review.user);
-                if (user) break;
-              }
-              console.log("User found:", user);
-              const firstName = user ? user.firstName : "Unknown User";
+              const user = users.find((usersArray) => {
+                console.log("conditions", usersArray.id, review.user)
+                return usersArray.id === review.user});
+              console.log({myUser:user})
+              const username = user ? user?.username : "Unknown User";
 
               return (
                 <Col xs={12} className="mb-4" key={review._id}>
                   <div className="othersReview_content p-3">
                     <div className="header d-flex align-items-center mb-3">
-                   
+                      <Badge pill className='user_badge me-3'>{username[0]||""}</Badge>
                       <div>
-                        <h3 className='text-capitalize'>{firstName}</h3>
+                        <h3 className='text-capitalize'>{username}</h3>
                         <p>Critic's Rating: {review.mediaRating}/5</p>
                       </div>
                     </div>

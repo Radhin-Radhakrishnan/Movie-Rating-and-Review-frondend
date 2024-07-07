@@ -21,6 +21,7 @@
     display: inline-block;
     text-align: center;
     white-space: nowrap; /* Prevent breaking */
+    border: 2px solid rgb(113, 255, 47);
 }
 
 .nav-btn:hover {

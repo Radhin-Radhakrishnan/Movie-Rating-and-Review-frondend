@@ -39,8 +39,9 @@ const ManageUsers = () => {
                             <Col xs={12} md={6} lg={4} className="mb-4" key={item._id}>
                             <div className="users_container mt-2 d-flex flex-column gap-2 py-2 px-2 py-md-4 px-md-4"  >
                                 <div className="first_part d-flex flex-row gap-3 justify-content-start align-items-center">
-                                   
-                                        {/* <p className='pt-2'>{item.email[0]}</p> */}
+
+                                     <p className='pt-2'></p>
+                                 
                                     
                                     <div className="username_part text-capitalize">
                                         <h1>{item.email}</h1>
